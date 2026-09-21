@@ -26,9 +26,112 @@
 </head>
 
 <body>
+    <div class="container">
+        <section id="Filter">
+            <form action="" class="d-flex flex-column flex-md-row">
+                <div class="input-group">
+                    <label class="input-group-text" for="inputGroupSelect01">
+                        <i class="fa-solid fa-bars-staggered"></i>
+                    </label>
 
+                    <select class="form-select" id="inputGroupSelect01">
+                        <option value="business" selected>business</option>
+                        <option value="entertainment">entertainment</option>
+                        <option value="general">general</option>
+                        <option value="health">health</option>
+                        <option value="science">science</option>
+                        <option value="sports">sports</option>
+                        <option value="technology">technology</option>
+                    </select>
+                </div>
 
+                <div class="input-group">
+                    <span class="input-group-text" id="basic-addon1">
+                        <i class="fa-solid fa-magnifying-glass fa-swing"></i>
+                    </span>
+                    <input type="search" class="form-control" placeholder="Search Here!">
+                </div>
 
+                <button class="button btn btn-info">Filter</button>
+                <input class="button btn btn-danger" type="reset">
+            </form>
+        </section>
+
+        <section id="Body">
+
+            <div class="content row mb-5 row-gap-4">
+                <div class="box col-10 col-sm-6 col-md-12 col-lg-6 mx-auto mx-sm-0">
+                    <div class="card d-flex flex-md-row">
+                        <div class="image">
+                            <img src="./images/image.jpg" alt="image">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the
+                                card's content.</p>
+                            <a href="#" class="btn btn-primary">Show More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box col-10 col-sm-6 col-md-12 col-lg-6 mx-auto mx-sm-0">
+                    <div class="card d-flex flex-md-row">
+                        <div class="image">
+                            <img src="./images/image.jpg" alt="image">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the
+                                card's content.</p>
+                            <a href="#" class="btn btn-primary">Show More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box col-10 col-sm-6 col-md-12 col-lg-6 mx-auto mx-sm-0">
+                    <div class="card d-flex flex-md-row">
+                        <div class="image">
+                            <img src="./images/image.jpg" alt="image">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the
+                                card's content.</p>
+                            <a href="#" class="btn btn-primary">Show More</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item">
+                        <button class="page-link" disabled>
+                            <i class="fa-solid fa-square-caret-left"></i>
+                        </button>
+                    </li>
+
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+
+                    <li class="page-item">
+                        <button class="page-link" disabled>
+                            <i class="fa-solid fa-square-caret-right"></i>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </section>
+
+    </div>
     <script src="./js/bootstrap.bundle.js"></script>
     <script src="./js/functions.js"></script>
     <script src="./js/script.js"></script>

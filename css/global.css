@@ -1,13 +1,25 @@
+:root {
+    /** Main Colors */
+    --color-white: #FFFFFF;
+    --color-corvette: #F9D0A2;
+    --color-apricot: #EE9373;
+    --color-putty: #E5CB8E;
+    --color-nandor: #42534A;
+    --color-watusi: #F9E0D1;
+    --color-clam-shell: #DABAAC;
+    --color-green-smoke: #98A568;
 
+    --border-r : 8px;
+}
 * {
     font-family: "Nunito", sans-serif;
 }
 
 body {
+    min-height: 100svh;
     overflow-x: hidden;
-    background: rgb(173, 169, 150);
-    background: -webkit-linear-gradient(to right, rgb(234, 234, 234), rgb(219, 219, 219), rgb(242, 242, 242), rgb(173, 169, 150));
-    background: linear-gradient(to right, rgb(234, 234, 234), rgb(219, 219, 219), rgb(242, 242, 242), rgb(173, 169, 150));
+    background-color: #FEFBFD;
+    font-family: Arial, sans-serif;
 }
 
 a {
@@ -21,4 +33,9 @@ li {
 
 section {
     padding: 30px 0px;
+}
+
+.container {
+    padding-top: 50px;
+    padding-bottom: 50px;
 }

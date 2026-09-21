@@ -1,14 +1,40 @@
 /* 350 */
-@media (max-width: 1300px) {}
+@media (max-width: 1300px) {
+    #Filter .button {
+        width: 100%;
+    }
+
+
+    #Body .card .image {
+        width: 100%;
+    }
+}
 
 /* 450 */
-@media (min-width: 371px) and (max-width: 1300px) {}
+@media (min-width: 371px) and (max-width: 1300px) {
+    #Body .card {
+        width: 300px;
+        margin: auto;
+    }
+}
 
 /* 650 */
-@media (min-width: 577px) and (max-width: 1300px) {}
+@media (min-width: 577px) and (max-width: 1300px) {
+    #Body .card {
+        width: 100%;
+    }
+}
 
 /* 850 */
-@media (min-width: 769px) and (max-width: 1300px) {}
+@media (min-width: 769px) and (max-width: 1300px) {
+    #Filter .button {
+        width: 100px;
+    }
+
+    #Body .card .image {
+        width: 40%;
+    }
+}
 
 /* 1050 */
 @media (min-width: 992px) and (max-width: 1300px) {}
