@@ -1,0 +1,24 @@
+
+* {
+    font-family: "Nunito", sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+    background: rgb(173, 169, 150);
+    background: -webkit-linear-gradient(to right, rgb(234, 234, 234), rgb(219, 219, 219), rgb(242, 242, 242), rgb(173, 169, 150));
+    background: linear-gradient(to right, rgb(234, 234, 234), rgb(219, 219, 219), rgb(242, 242, 242), rgb(173, 169, 150));
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+li {
+    list-style: none;
+}
+
+section {
+    padding: 30px 0px;
+}
