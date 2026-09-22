@@ -36,8 +36,11 @@
     border-left: 0;
     border-radius: 0px var(--border-r) var(--border-r) 0px;
     box-shadow: none;
-    cursor: pointer;
     transition: 0.25s ease;
+}
+
+#Filter .form-select {
+    cursor: pointer;
 }
 
 #Filter .form-select:hover,
@@ -90,12 +93,17 @@
     border-color: var(--color-corvette);
     transform: translateY(-2px);
 }
-#Filter input.button{
+
+#Filter input.button {
     background-color: rgb(168, 11, 11);
     border: 1px solid rgb(168, 11, 11);
-} 
+}
 
 /** Card */
+#Body {
+    position: relative;
+    overflow: hidden;
+}
 
 #Body .card {
     height: 100%;
@@ -108,6 +116,7 @@
     transition:
         transform 0.3s ease,
         box-shadow 0.3s ease;
+    cursor: default;
 }
 
 #Body .card:hover {
@@ -163,26 +172,32 @@
 /** Show More */
 
 #Body .card .btn-primary {
+    position: absolute;
     color: var(--color-white);
     background: var(--color-nandor);
     border-color: var(--color-nandor);
-    border-radius: var(--border-r);
+    border-radius: var(--border-r) 0px 0px var(--border-r);
     transition: 0.25s ease;
+    bottom: 0;
+    right: 0;
+    transform: translate(110%, -8px);
 }
 
 #Body .card .btn-primary:hover {
     color: var(--color-nandor);
     background: var(--color-corvette);
     border-color: var(--color-corvette);
-    transform: translateY(-2px);
 }
 
+#Body .card:hover .btn-primary {
+    transform: translate(0%, -8px);
+
+}
+
+/** pagination */
 #Body nav {
-    display: flex;
-    justify-content: center;
     margin-top: 20px;
 }
-
 
 #Body .pagination {
     display: flex;
@@ -190,6 +205,8 @@
     gap: 8px;
     padding: 10px;
     margin: 0;
+    margin: auto;
+    width: fit-content;
     border: 1px solid var(--color-clam-shell);
     border-radius: var(--border-r);
     box-shadow:
@@ -201,6 +218,7 @@
 
 #Body .page-item {
     margin: 0;
+    cursor: pointer;
 }
 
 #Body .page-link {
@@ -231,6 +249,10 @@
 }
 
 /** Pagination Active */
+nav.pagination-container {
+    position: relative;
+    overflow: auto;
+}
 
 #Body .page-item.active .page-link {
     color: var(--color-white);
