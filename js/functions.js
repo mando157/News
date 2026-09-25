@@ -1,20 +1,29 @@
 // * Get Data
+let date = new Date().toISOString().split("T")[0],
+    lastRequest = "";
+
 async function getData(category = "general", search = "", page = 1) {
 
     const parameters = new URLSearchParams({
         category: category,
         q: search,
-        from: "2026-08-22",
+        from: date,
         apiKey: "9866e34e31044c538589788f1aa9828d",
         pageSize: 10,
         page: page
     });
 
-    let response = await fetch(`https://newsapi.org/v2/top-headlines?${parameters.toString()}`);
+    let currentRequest = parameters.toString();
+
+    if (currentRequest === lastRequest) {
+        return;
+    }
+
+    let response = await fetch(`https://newsapi.org/v2/top-headlines?${currentRequest}`);
+
+    lastRequest = currentRequest;
 
     let data = await response.json();
-
-    console.log(data)
 
     showData(data, page);
 
@@ -25,7 +34,6 @@ function showData(data, currentPage) {
         allData = data.articles,
         $cardsContainer = $("#Body .content");
 
-
     if (allData.length > 0) {
         $cardsContainer.html("");
 
@@ -33,8 +41,25 @@ function showData(data, currentPage) {
             $cardsContainer.append(cardComponent(item));
         });
 
+        $("nav").removeClass("d-none");
         $("nav .pagination").html(createPagination(currentPage, numberOfPages));
     }
+    else if (allData.length == 0) {
+        $cardsContainer.html("");
+        $cardsContainer.html(alertComponent());
+        $("nav").addClass("d-none");
+    }
+}
+
+function alertComponent() {
+    return `    
+        <div class="alert alert-danger d-flex align-items-center w-75 m-auto" role="alert">
+            <div class="w-100 d-flex align-items-center justify-content-center">
+                <i class="fa-solid fa-bullhorn me-3 fs-4"></i>
+                <p class="m-0">No news available to display.</p>
+            </div>
+        </div>
+    `
 }
 
 function cardComponent(item) {
@@ -62,7 +87,6 @@ function cardComponent(item) {
 // * Pagination
 
 function createPagination(currentPage, totalPages) {
-
     let liEle = `
         <li class="page-item">
             <button class="page-link" ${(currentPage == 1) ? "disabled" : ""}  onclick="paginate(${(currentPage > 1) ? (currentPage - 1) : 1})">
